@@ -26,5 +26,7 @@ docker run -d -p 7400:7400 deployr
 
 ### Changes to the sh files
 
+The `sh` files are from the `DeployR Open` source package with the following modifications:
+
 * `installDeployROpen.sh`: removed the `restart` section so that server will not run in the docker building process
 * `startAll.sh`: added support for `Docker Toolbox`, changed Tomcat Server to non-daemon mode
