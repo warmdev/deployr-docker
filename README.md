@@ -2,11 +2,14 @@
 
 ### Version information
 
-This Dockerfile works with DeployR Open 7.4.1
+* DeployR Open 7.4.1
+* JDK 8u65
+* RRO 3.2.2
 
 ### Before building
 
 * If you use this with `Docker Toolbox`, uncomment line 5 in `startAll.sh`. 
+* Please ensure that you have at least 6GB of free space, otherwise you may encounter problems during the building process (`mongod` process not found) or when running (main page showing `404` error).
  
 ### Usage
 
