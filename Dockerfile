@@ -40,6 +40,6 @@ USER deployr
 RUN chmod +x deployr/7.4.1/startAll.sh && sync
 RUN rm -rf download
 
-EXPOSE 7400
+EXPOSE 7400,7406
 
 CMD cd deployr/7.4.1/ && ./startAll.sh
