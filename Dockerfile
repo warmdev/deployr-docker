@@ -32,10 +32,11 @@ RUN chown deployr:deployr download/installFiles/installDeployROpen.sh
 USER deployr
 RUN cd download/installFiles/ && export JAVA_HOME=/opt/jdk1.8.0_65/ && chmod +x installDeployROpen.sh && sync && ./installDeployROpen.sh --no-ask --nolicense
 ADD startAll.sh deployr/7.4.1/
+ADD init.sh deployr/7.4.1/
 USER root
-RUN chown deployr:deployr deployr/7.4.1/startAll.sh
+RUN chown deployr:deployr deployr/7.4.1/startAll.sh deployr/7.4.1/init.sh
 USER deployr
-RUN chmod +x deployr/7.4.1/startAll.sh && sync
+RUN chmod +x deployr/7.4.1/startAll.sh deployr/7.4.1/init.sh && sync
 RUN rm -rf download
 
 EXPOSE 7400 7406
