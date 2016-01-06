@@ -2,7 +2,7 @@
 
 ### Version information
 
-* DeployR Open 7.4.1
+* DeployR Open 8.0.0
 * JDK 8u65
 * RRO 3.2.2
 
@@ -16,10 +16,10 @@
 git clone https://github.com/warmdev/deployr-docker.git
 cd deployr-docker
 sudo docker build -t deployr .
-sudo docker run -d -p 7400:7400 -p 7406:7406 deployr
+sudo docker run -d -p 8000:8000 -p 8006:8006 deployr
 ```
 
-* For Linux users, server will be live at `http://localhost:7400/revolution`
+* For Linux users, server will be live at `http://localhost:8000/revolution`
 
 ### Special instructions for `Docker Toolbox` users
 
@@ -31,10 +31,10 @@ sudo docker run -d -p 7400:7400 -p 7406:7406 deployr
 git clone https://github.com/warmdev/deployr-docker.git
 cd deployr-docker
 docker build -t deployr .
-docker run -d -p 7400:7400 -p 7406:7406 deployr
+docker run -d -p 8000:8000 -p 8006:8006 deployr
 ```
 
-* For `Docker Toolbox` users, server will be live at `http://192.168.99.100:7400/revolution`
+* For `Docker Toolbox` users, server will be live at `http://192.168.99.100:8000/revolution`
 
 ### Default password
 
