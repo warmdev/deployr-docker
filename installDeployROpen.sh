@@ -6,25 +6,26 @@ DEBUG_LOGS="false"
 NOLICENSE="false"
 NODE=0
 DATABASE_SERVER_NAME="localhost"
-DATABASE_PORT="7403"
+DATABASE_PORT="8003"
 REMOTE_DATA_BASE=local
 INSTALL_FOLDER=""
 ERROR_OK=0
 SILENT_MODE=0
 IP=""
 REDHAT_VERSION=64
-VERSION=7.4
-MINOR_VERSION=1
-REVO_VERSION=7.4.1
+RSERVE_VERSION=7.4.2
+VERSION=8.0
+MINOR_VERSION=0
+REVO_VERSION=8.0.0
 REVO_BIN_STRING=Revo-$VERSION
 R_VERSION=R-3.1.2
 LINUX_VERSION=5
-TOMCAT_VERSION=7.0.34
-TOMCAT_SSL_PORT=7401
-TOMCAT_PORT=7400
-TOMCAT_SHUTDOWN_PORT=7402
-RSERVE_PORT=7404
-RSERVE_CANCEL_PORT=7405
+TOMCAT_VERSION=7.0.64
+TOMCAT_SSL_PORT=8001
+TOMCAT_PORT=8000
+TOMCAT_SHUTDOWN_PORT=8002
+RSERVE_PORT=8004
+RSERVE_CANCEL_PORT=8005
 USER=`whoami`
 GROUP=`id -g -n $USER`
 IS_ROOT=0
@@ -229,7 +230,7 @@ echo "Mongo installed" >> $PWDD/install_log.txt 2>&1
 
 configureRserve() {
 cd $PWDD/installFiles
-rserve/configure.sh $LINUX $PWDD $INSTALL_FOLDER $USER $GROUP $RRE_PATH $RSERVE_PATH $IS_ROOT $VERSION
+rserve/configure.sh $LINUX $PWDD $INSTALL_FOLDER $USER $GROUP $RRE_PATH $RSERVE_PATH $IS_ROOT $RSERVE_VERSION
 RETVAL=$?
 if [ $RETVAL -ne 0 ] ; then
     exitWithError $RETVAL
@@ -334,7 +335,7 @@ printURL() {
         echo "*" | tee -a $PWDD/install_log.txt 2>&1
         echo "*     Open the following URL in your browser to access DeployR's landing page:" | tee -a $PWDD/install_log.txt 2>&1
         echo "*" | tee -a $PWDD/install_log.txt 2>&1
-        echo "*     http://$HOST_NAME:$TOMCAT_PORT/revolution" | tee -a $PWDD/install_log.txt 2>&1
+        echo "*     http://$HOST_NAME:$TOMCAT_PORT/deployr/landing" | tee -a $PWDD/install_log.txt 2>&1
         echo "*" | tee -a $PWDD/install_log.txt 2>&1
         echo "*     Please log in as 'admin'. For your security, you must set a new password for that account." | tee -a $PWDD/install_log.txt 2>&1
         echo "*     Note: The default password for the 'admin' and 'testuser' accounts is 'changeme'." | tee -a $PWDD/install_log.txt 2>&1
