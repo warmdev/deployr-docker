@@ -19,7 +19,7 @@ sudo docker build -t deployr .
 sudo docker run -d -p 8000:8000 -p 8006:8006 deployr
 ```
 
-* For Linux users, server will be live at `http://localhost:8000/revolution`
+* For Linux users, server will be live at `http://localhost:8000/deployr/landing`
 
 ### Special instructions for `Docker Toolbox` users
 
@@ -34,7 +34,7 @@ docker build -t deployr .
 docker run -d -p 8000:8000 -p 8006:8006 deployr
 ```
 
-* For `Docker Toolbox` users, server will be live at `http://192.168.99.100:8000/revolution`
+* For `Docker Toolbox` users, server will be live at `http://192.168.99.100:8000/deployr/landing`
 
 ### Default password
 
