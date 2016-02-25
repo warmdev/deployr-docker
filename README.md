@@ -3,7 +3,7 @@
 ### Version information
 
 * DeployR Open 8.0.0
-* JDK 8u71
+* JDK 8u73
 * MRO 3.2.3
 
 ### Before building
