@@ -5,14 +5,14 @@ RUN yum -y update; yum clean all; yum -y install which wget libicu-devel psmisc 
 WORKDIR /opt/
 RUN wget --no-cookies --no-check-certificate --header \
         "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" \
-        "http://download.oracle.com/otn-pub/java/jdk/8u73-b02/jdk-8u73-linux-x64.tar.gz"; \
-    tar xzf jdk-8u73-linux-x64.tar.gz; \
-    alternatives --install /usr/bin/java java /opt/jdk1.8.0_73/bin/java 2; \
-    alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_73/bin/jar 2; \
-    alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_73/bin/javac 2; \
-    alternatives --set jar /opt/jdk1.8.0_73/bin/jar; \
-    alternatives --set javac /opt/jdk1.8.0_73/bin/javac; \
-    rm -rf jdk-8u73-linux-x64.tar.gz
+        "http://download.oracle.com/otn-pub/java/jdk/8u77-b03/jdk-8u77-linux-x64.tar.gz"; \
+    tar xzf jdk-8u77-linux-x64.tar.gz; \
+    alternatives --install /usr/bin/java java /opt/jdk1.8.0_77/bin/java 2; \
+    alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_77/bin/jar 2; \
+    alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_77/bin/javac 2; \
+    alternatives --set jar /opt/jdk1.8.0_77/bin/jar; \
+    alternatives --set javac /opt/jdk1.8.0_77/bin/javac; \
+    rm -rf jdk-8u77-linux-x64.tar.gz
 
 RUN wget https://mran.revolutionanalytics.com/install/mro/3.2.3/MRO-3.2.3.el7.x86_64.rpm; \
     yum install -y MRO-3.2.3.el7.x86_64.rpm; rm -rf MRO-3.2.3.el7.x86_64.rpm
@@ -31,7 +31,7 @@ ADD installDeployROpen.sh download/installFiles/
 USER root
 RUN chown deployr:deployr download/installFiles/installDeployROpen.sh
 USER deployr
-RUN cd download/installFiles/ && export JAVA_HOME=/opt/jdk1.8.0_73/ && chmod +x installDeployROpen.sh && sync && ./installDeployROpen.sh --no-ask --nolicense
+RUN cd download/installFiles/ && export JAVA_HOME=/opt/jdk1.8.0_77/ && chmod +x installDeployROpen.sh && sync && ./installDeployROpen.sh --no-ask --nolicense
 ADD startAll.sh deployr/8.0.0/
 USER root
 RUN chown deployr:deployr deployr/8.0.0/startAll.sh
