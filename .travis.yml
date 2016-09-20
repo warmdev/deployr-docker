@@ -1,0 +1,13 @@
+sudo: required
+
+language: R
+
+services: 
+  - docker
+
+before_install:
+  - docker build -t deployr
+  - docker run -d -p 8000:8000 -p 8006:8006 --name deployr deployr
+  - docker ps -a
+  - sleep 120
+  - docker exec -it deployr sh -c 'cd /home/deployr/deployr/8.0.0/deployr/diagnostics && ./diagnostics.sh'
